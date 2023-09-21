@@ -1,0 +1,402 @@
+{
+  "id": "1681595387.1374",
+  "timestamp": 20230415154947,
+  "backImageSize": "(1295, 858)",
+  "cui": "NA",
+  "frontImageSize": "(1304, 834)",
+  "inference": {
+    "metadata": {
+      "back_size": [1295, 858],
+      "environment": "PRD",
+      "errors": [
+        {},
+        {
+          "error": "IndexError('list index out of range')"
+        },
+        "No text detected in Back image"
+      ],
+      "front_size": [1304, 834],
+      "predictTime": 1.5766685009002686,
+      "validations": {
+        "back": {
+          "inRangee": false,
+          "mandatoryFields": false,
+          "type": "other"
+        },
+        "front": {
+          "inRangee": true,
+          "mandatoryFields": true,
+          "type": "dpi_back"
+        }
+      },
+      "version": "1.6.2"
+    },
+    "plugins": {
+      "faceDetect": {
+        "bbFaceDetect": "[{'area': 0, 'boundingBox': (0, 0, 0, 0)}]",
+        "uriFaceDetect": []
+      }
+    },
+    "predictions": {
+      "back": {
+        "birthPlace": "",
+        "birthRecord": "",
+        "cardIdentifier": "",
+        "city": "",
+        "dueDate": "",
+        "emissionPlace": "",
+        "maritalStatus": "",
+        "series": ""
+      },
+      "front": {
+        "birthCountry": "",
+        "birthDate": "27/06/2029",
+        "citizenship": "GUATEMALA",
+        "gender": "",
+        "lastName": "",
+        "name": "",
+        "personalDocumentDate": "",
+        "personalDocumentId": ""
+      },
+      "idDetect": {
+        "back": "",
+        "front": "color"
+      },
+      "match": {
+        "birthDate": false,
+        "dueDate": true,
+        "gender": true,
+        "lastName": true,
+        "name": true,
+        "personalDocumentId": true
+      },
+      "mrz": {
+        "birthDate": "",
+        "dueDate": "",
+        "gender": {
+          "itemId": 0,
+          "value": ""
+        },
+        "lastName": "",
+        "name": "",
+        "personalDocumentId": ""
+      }
+    },
+    "raw": {
+      "back": {
+        "birthPlace": "",
+        "birthRecord": "",
+        "cardIdentifier": "",
+        "city": "",
+        "dueDate": "",
+        "emissionPlace": "",
+        "maritalStatus": "",
+        "rawDueDate": "",
+        "series": ""
+      },
+      "back_id_detect": {
+        "idBoundingBox": "",
+        "imgMSE": 0,
+        "imgType": ""
+      },
+      "back_kvp": {},
+      "back_kvp_df": {},
+      "errors": [
+        {},
+        {
+          "error": "IndexError('list index out of range')"
+        },
+        "No text detected in Back image"
+      ],
+      "front": {
+        "birthCountry": "",
+        "birthDate": "27/06/2029",
+        "citizenship": "",
+        "gender": "",
+        "lastName": "",
+        "lastNames": "",
+        "name": "",
+        "personalDocumentDate": "",
+        "personalDocumentId": "",
+        "rawBirthDate": "27JUN2029",
+        "rawPersonalDocumentDate": ""
+      },
+      "front_id_detect": {
+        "idBoundingBox": [[16, 0, 1289, 15, 1279, 830, 6, 813, 3283]],
+        "imgMSE": 130.9872888020851,
+        "imgType": "color"
+      },
+      "front_kvp": {
+        "birthDate": "",
+        "citizenship": "GUATEMALA",
+        "cui": "609277129627fuA2687671801501014i219610805098",
+        "gender": "",
+        "personalDocumentDate": "",
+        "rawBirthDate": "",
+        "rawPersonalDocumentDate": ""
+      },
+      "front_kvp_df": [
+        {
+          "bb": [403, 54, 468, 56, 468, 74, 402, 72],
+          "col": 1,
+          "labels": "LUGAR",
+          "r": "fn",
+          "row": 0
+        },
+        {
+          "bb": [471, 57, 498, 58, 498, 75, 470, 74],
+          "col": 1,
+          "labels": "DE",
+          "r": "fn",
+          "row": 0
+        },
+        {
+          "bb": [500, 56, 620, 59, 619, 78, 500, 75],
+          "col": 2,
+          "labels": "NACIMIENTO:",
+          "r": "fn",
+          "row": 0
+        },
+        {
+          "bb": [402, 82, 517, 85, 517, 113, 401, 109],
+          "col": 1,
+          "labels": "IZABAL",
+          "r": "",
+          "row": 1
+        },
+        {
+          "bb": [401, 119, 533, 122, 532, 149, 400, 147],
+          "col": 1,
+          "labels": "PUERTO",
+          "r": "",
+          "row": 2
+        },
+        {
+          "bb": [542, 122, 684, 126, 683, 154, 541, 150],
+          "col": 2,
+          "labels": "BARRIOS",
+          "r": "",
+          "row": 2
+        },
+        {
+          "bb": [899, 130, 967, 132, 966, 151, 899, 149],
+          "col": 4,
+          "labels": "Re9T:1TOo",
+          "r": "",
+          "row": 2
+        },
+        {
+          "bb": [970, 132, 1048, 134, 1047, 150, 970, 147],
+          "col": 5,
+          "labels": "V6OWoUno",
+          "r": "",
+          "row": 2
+        },
+        {
+          "bb": [1048, 136, 1070, 136, 1070, 150, 1047, 149],
+          "col": 5,
+          "labels": "d",
+          "r": "",
+          "row": 2
+        },
+        {
+          "bb": [1073, 137, 1099, 137, 1098, 151, 1073, 151],
+          "col": 5,
+          "labels": "16d",
+          "r": "",
+          "row": 2
+        },
+        {
+          "bb": [1101, 137, 1175, 139, 1175, 154, 1101, 152],
+          "col": 5,
+          "labels": "PETFOMO:p",
+          "r": "",
+          "row": 2
+        },
+        {
+          "bb": [399, 162, 483, 164, 483, 192, 399, 190],
+          "col": 1,
+          "labels": "L:126",
+          "r": "",
+          "row": 3
+        },
+        {
+          "bb": [490, 164, 574, 166, 573, 194, 489, 192],
+          "col": 2,
+          "labels": "F:111",
+          "r": "",
+          "row": 3
+        },
+        {
+          "bb": [579, 166, 680, 169, 679, 197, 579, 194],
+          "col": 3,
+          "labels": "P:2281",
+          "r": "",
+          "row": 3
+        },
+        {
+          "bb": [397, 202, 497, 204, 497, 223, 396, 221],
+          "col": 1,
+          "labels": "VECINDAD:",
+          "r": "",
+          "row": 4
+        },
+        {
+          "bb": [397, 218, 603, 223, 603, 252, 396, 247],
+          "col": 1,
+          "labels": "GUATEMALA",
+          "r": "pais",
+          "row": 5
+        },
+        {
+          "bb": [396, 251, 490, 253, 489, 281, 395, 279],
+          "col": 1,
+          "labels": "VILLA",
+          "r": "",
+          "row": 6
+        },
+        {
+          "bb": [497, 253, 608, 255, 607, 283, 496, 281],
+          "col": 2,
+          "labels": "NUEVA",
+          "r": "",
+          "row": 6
+        },
+        {
+          "bb": [948, 259, 1025, 260, 1025, 278, 948, 277],
+          "col": 5,
+          "labels": "ESTADO",
+          "r": "",
+          "row": 6
+        },
+        {
+          "bb": [1026, 261, 1075, 262, 1075, 279, 1026, 278],
+          "col": 5,
+          "labels": "CIVIL:",
+          "r": "",
+          "row": 6
+        },
+        {
+          "bb": [949, 287, 1098, 290, 1097, 317, 948, 314],
+          "col": 5,
+          "labels": "SOLTERO",
+          "r": "",
+          "row": 7
+        },
+        {
+          "bb": [947, 324, 1011, 326, 1011, 344, 947, 342],
+          "col": 5,
+          "labels": "FECHA",
+          "r": "fn",
+          "row": 8
+        },
+        {
+          "bb": [1012, 327, 1040, 328, 1040, 344, 1012, 344],
+          "col": 5,
+          "labels": "DE",
+          "r": "fn",
+          "row": 8
+        },
+        {
+          "bb": [1041, 327, 1169, 330, 1169, 347, 1040, 345],
+          "col": 5,
+          "labels": "VENCIMIENTO:",
+          "r": "fn",
+          "row": 8
+        },
+        {
+          "bb": [947, 350, 1113, 354, 1112, 381, 947, 378],
+          "col": 5,
+          "labels": "27JUN2029",
+          "r": "Fdate",
+          "row": 9
+        },
+        {
+          "bb": [138, 377, 216, 379, 215, 398, 137, 397],
+          "col": 0,
+          "labels": "NÚMERO",
+          "r": "",
+          "row": 10
+        },
+        {
+          "bb": [217, 380, 243, 381, 242, 398, 216, 397],
+          "col": 0,
+          "labels": "DE",
+          "r": "",
+          "row": 10
+        },
+        {
+          "bb": [243, 380, 301, 381, 301, 400, 243, 398],
+          "col": 0,
+          "labels": "SERIE:",
+          "r": "",
+          "row": 10
+        },
+        {
+          "bb": [127, 416, 328, 419, 328, 447, 126, 444],
+          "col": 0,
+          "labels": "000002794467",
+          "r": "Fcui",
+          "row": 11
+        },
+        {
+          "bb": [126, 592, 828, 584, 829, 670, 127, 678],
+          "col": 0,
+          "labels": "609277129627fuA2",
+          "r": "Fcui",
+          "row": 12
+        },
+        {
+          "bb": [305, 654, 1063, 648, 1063, 742, 305, 748],
+          "col": 2,
+          "labels": "26HEFEnt91rtete4",
+          "r": "",
+          "row": 12
+        },
+        {
+          "bb": [457, 547, 1131, 532, 1133, 595, 458, 611],
+          "col": 5,
+          "labels": "687671801501014i2",
+          "r": "Fcui",
+          "row": 12
+        },
+        {
+          "bb": [905, 67, 1169, 76, 1167, 140, 903, 131],
+          "col": 5,
+          "labels": "FEMA",
+          "r": "",
+          "row": 12
+        },
+        {
+          "bb": [759, 615, 1241, 604, 1242, 670, 760, 681],
+          "col": 5,
+          "labels": "19610805098",
+          "r": "Fcui",
+          "row": 12
+        }
+      ],
+      "mrz": {
+        "bowpi": {
+          "birthDate": "",
+          "dueDate": "",
+          "gender": {
+            "itemId": 0,
+            "value": ""
+          },
+          "lastName": "",
+          "name": "",
+          "personalDocumentId": ""
+        },
+        "sdk": []
+      }
+    }
+  },
+  "metadata": {
+    "id": "ATG_3041",
+    "timestamp": 1681595386943,
+    "origin": "mobile"
+  },
+  "uriBack": "s3://ds-bowpi-prd/ocr/dev1/inference/images/2023/04/15/2023041515494_1681573788_71409_b.jpg",
+  "uriFront": "s3://ds-bowpi-prd/ocr/dev1/inference/images/2023/04/15/2023041515494_1681573788_71409_f.jpg",
+  "version": "1.6.2"
+}

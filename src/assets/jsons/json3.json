@@ -1,0 +1,769 @@
+{
+  "id": "1681690803.79262",
+  "timestamp": 20230416182003,
+  "backImageSize": "(1063, 705)",
+  "cui": "2705429300101",
+  "frontImageSize": "(1074, 705)",
+  "inference": {
+    "metadata": {
+      "back_size": [1063, 705],
+      "environment": "PRD",
+      "errors": [{}, {}],
+      "front_size": [1074, 705],
+      "predictTime": 1.9807262420654297,
+      "validations": {
+        "back": {
+          "inRangee": false,
+          "mandatoryFields": false,
+          "type": "other"
+        },
+        "front": {
+          "inRangee": false,
+          "mandatoryFields": true,
+          "type": "dpi_front"
+        }
+      },
+      "version": "1.6.2"
+    },
+    "plugins": {
+      "faceDetect": {
+        "bbFaceDetect": "[{'area': 271, 'boundingBox': (739, 284, 981, 546)}]",
+        "uriFaceDetect": [
+          "s3://ds-bowpi-prd/ocr/dev1/inference/images/2023/04/16/1681690803.79262_1681669205_534264_000_face.jpg"
+        ]
+      }
+    },
+    "predictions": {
+      "back": {
+        "birthPlace": "",
+        "birthRecord": "F:381 P:2381",
+        "cardIdentifier": "",
+        "city": "MIXCO GUATEMALA",
+        "dueDate": "29/03/2026",
+        "emissionPlace": "",
+        "maritalStatus": "SOLTERO",
+        "series": "000001628034"
+      },
+      "front": {
+        "birthCountry": "GTM",
+        "birthDate": "01/05/1995",
+        "citizenship": "GTM",
+        "gender": "MASCULINO",
+        "lastName": "INAY RODRÍGUEZ",
+        "name": "ELISEO BRAYAM",
+        "personalDocumentDate": "30/03/2016",
+        "personalDocumentId": "2705 42930 0101"
+      },
+      "idDetect": {
+        "back": "color",
+        "front": "color"
+      },
+      "match": {
+        "birthDate": true,
+        "dueDate": true,
+        "gender": true,
+        "lastName": true,
+        "name": false,
+        "personalDocumentId": true
+      },
+      "mrz": {
+        "birthDate": "01/05/1995",
+        "country": {
+          "itemId": "GTM",
+          "value": "Guatemala"
+        },
+        "docType": "ID",
+        "documentNumber": "270542930",
+        "dueDate": "29/03/2026",
+        "fieldA": "S",
+        "gender": {
+          "itemId": "M",
+          "value": "MASCULINO"
+        },
+        "lastName": "INAY",
+        "mrzCounty": {
+          "itemId": "Guatemala",
+          "value": "01"
+        },
+        "mrzState": {
+          "itemId": "Guatemala",
+          "value": "01"
+        },
+        "name": "BRAYAM",
+        "nationality": {
+          "itemId": "GTM",
+          "value": "Guatemala"
+        },
+        "personalDocumentId": "2705429300101",
+        "personalDocumentIdCounty": {
+          "itemId": "Guatemala",
+          "value": "01"
+        },
+        "personalDocumentIdState": {
+          "itemId": "Guatemala",
+          "value": "01"
+        },
+        "rawBirthDate": "950501",
+        "rawCountry": "GTM",
+        "rawDueDate": "260329",
+        "rawNationality": "GTM"
+      }
+    },
+    "raw": {
+      "back": {
+        "birthPlace": "",
+        "birthRecord": "",
+        "cardIdentifier": "",
+        "city": "MIXCO GUATEMALA",
+        "dueDate": "29/03/2026",
+        "emissionPlace": "",
+        "maritalStatus": "SOLTERO",
+        "rawDueDate": "29MAR2026",
+        "series": ""
+      },
+      "back_id_detect": {
+        "idBoundingBox": [[39, 39, 1018, 45, 1014, 667, 34, 660, 2330]],
+        "imgMSE": 80.8090617187511,
+        "imgType": "color"
+      },
+      "back_kvp": {
+        "birthRecord": "F:381 P:2381",
+        "dueDate": "29/03/2026",
+        "maritalStatus": "SOLTERO",
+        "rawDueDate": "29MAR2026",
+        "series": "000001628034"
+      },
+      "back_kvp_df": [
+        {
+          "bb": [323, 70, 376, 70, 376, 86, 323, 86],
+          "col": 1,
+          "labels": "LUA",
+          "r": "ln",
+          "row": 0
+        },
+        {
+          "bb": [377, 71, 399, 71, 399, 86, 377, 86],
+          "col": 1,
+          "labels": "DE",
+          "r": "ln",
+          "row": 0
+        },
+        {
+          "bb": [400, 71, 495, 72, 495, 88, 400, 87],
+          "col": 1,
+          "labels": "NACIMIENTO",
+          "r": "fv",
+          "row": 0
+        },
+        {
+          "bb": [325, 91, 465, 94, 464, 116, 324, 113],
+          "col": 1,
+          "labels": "GUATEMALA",
+          "r": "pais",
+          "row": 1
+        },
+        {
+          "bb": [324, 114, 465, 117, 464, 139, 323, 136],
+          "col": 1,
+          "labels": "GUATEMALA",
+          "r": "pais",
+          "row": 2
+        },
+        {
+          "bb": [883, 107, 971, 109, 971, 141, 882, 140],
+          "col": 7,
+          "labels": "Renap",
+          "r": "",
+          "row": 2
+        },
+        {
+          "bb": [324, 151, 401, 152, 401, 174, 323, 173],
+          "col": 1,
+          "labels": "L:73IZ6",
+          "r": "",
+          "row": 3
+        },
+        {
+          "bb": [405, 153, 461, 153, 461, 175, 404, 175],
+          "col": 1,
+          "labels": "F:381",
+          "r": "FF",
+          "row": 3
+        },
+        {
+          "bb": [465, 153, 534, 153, 534, 176, 465, 176],
+          "col": 2,
+          "labels": "P:2381",
+          "r": "FP",
+          "row": 3
+        },
+        {
+          "bb": [322, 177, 399, 178, 399, 194, 321, 194],
+          "col": 1,
+          "labels": "VECINDAD",
+          "r": "ve",
+          "row": 4
+        },
+        {
+          "bb": [322, 196, 396, 197, 396, 219, 321, 218],
+          "col": 1,
+          "labels": "MIXCO",
+          "r": "",
+          "row": 5
+        },
+        {
+          "bb": [750, 203, 812, 203, 812, 221, 750, 220],
+          "col": 3,
+          "labels": "ESTADO",
+          "r": "ec",
+          "row": 5
+        },
+        {
+          "bb": [813, 204, 856, 204, 856, 220, 812, 220],
+          "col": 5,
+          "labels": "CIVIL:",
+          "r": "ec",
+          "row": 5
+        },
+        {
+          "bb": [322, 219, 462, 221, 462, 244, 321, 241],
+          "col": 1,
+          "labels": "GUATEMALA",
+          "r": "pais",
+          "row": 6
+        },
+        {
+          "bb": [751, 225, 858, 226, 858, 248, 751, 248],
+          "col": 3,
+          "labels": "SOLTERO",
+          "r": "Fec",
+          "row": 6
+        },
+        {
+          "bb": [750, 254, 802, 254, 801, 271, 750, 270],
+          "col": 3,
+          "labels": "FECHA",
+          "r": "fv",
+          "row": 7
+        },
+        {
+          "bb": [802, 255, 825, 255, 825, 270, 802, 270],
+          "col": 4,
+          "labels": "DE",
+          "r": "",
+          "row": 7
+        },
+        {
+          "bb": [825, 255, 931, 255, 931, 271, 825, 271],
+          "col": 5,
+          "labels": "VENCIMIENTO:",
+          "r": "fv",
+          "row": 7
+        },
+        {
+          "bb": [750, 276, 875, 277, 874, 299, 750, 298],
+          "col": 3,
+          "labels": "29MAR2026",
+          "r": "Fdate",
+          "row": 8
+        },
+        {
+          "bb": [134, 325, 194, 326, 194, 344, 134, 343],
+          "col": 0,
+          "labels": "NÚMERO",
+          "r": "",
+          "row": 9
+        },
+        {
+          "bb": [195, 327, 216, 327, 215, 344, 195, 344],
+          "col": 0,
+          "labels": "DE",
+          "r": "",
+          "row": 9
+        },
+        {
+          "bb": [216, 327, 259, 328, 258, 345, 216, 344],
+          "col": 0,
+          "labels": "SERE:",
+          "r": "",
+          "row": 9
+        },
+        {
+          "bb": [127, 355, 278, 358, 277, 380, 126, 377],
+          "col": 0,
+          "labels": "000001628034",
+          "r": "Fns",
+          "row": 10
+        },
+        {
+          "bb": [83, 555, 305, 556, 305, 604, 83, 602],
+          "col": 0,
+          "labels": "TNAY64B",
+          "r": "",
+          "row": 11
+        },
+        {
+          "bb": [129, 504, 543, 500, 543, 551, 130, 554],
+          "col": 0,
+          "labels": "505014M26032980",
+          "r": "",
+          "row": 11
+        },
+        {
+          "bb": [438, 507, 857, 506, 857, 557, 438, 559],
+          "col": 6,
+          "labels": "2986TNi649086244",
+          "r": "",
+          "row": 11
+        },
+        {
+          "bb": [179, 454, 776, 452, 777, 505, 179, 507],
+          "col": 8,
+          "labels": "TN2705429306010150107",
+          "r": "",
+          "row": 11
+        }
+      ],
+      "errors": [{}, {}],
+      "front": {
+        "birthCountry": "GTM",
+        "birthDate": "01/05/1995",
+        "citizenship": "GTM",
+        "gender": "MASCULINO",
+        "lastName": "INAY RODRÍGUEZ",
+        "lastNames": "",
+        "name": "ELISEO BRAYAM",
+        "personalDocumentDate": "30/03/2016",
+        "personalDocumentId": "2705 42930 0101",
+        "rawBirthDate": "01MAY1995",
+        "rawPersonalDocumentDate": "30MAR2016"
+      },
+      "front_id_detect": {
+        "idBoundingBox": [[45, 32, 1031, 45, 1023, 673, 36, 659, 2326]],
+        "imgMSE": 133.75201640625107,
+        "imgType": "color"
+      },
+      "front_kvp": {
+        "birthCountry": "GTM",
+        "birthDate": "01/05/1995",
+        "citizenship": "GTM",
+        "cui": "2705429300101",
+        "gender": "MASCULINO",
+        "personalDocumentDate": "30/03/2016",
+        "rawBirthDate": "01MAY1995",
+        "rawPersonalDocumentDate": "30MAR2016"
+      },
+      "front_kvp_df": [
+        {
+          "bb": [105, 51, 271, 57, 270, 96, 103, 90],
+          "col": 1,
+          "labels": "REPÚBLICA",
+          "r": "h1",
+          "row": 0
+        },
+        {
+          "bb": [277, 62, 318, 63, 317, 96, 276, 95],
+          "col": 5,
+          "labels": "DE",
+          "r": "h1",
+          "row": 0
+        },
+        {
+          "bb": [323, 63, 517, 68, 516, 110, 322, 105],
+          "col": 6,
+          "labels": "GUATEMALA",
+          "r": "h1",
+          "row": 0
+        },
+        {
+          "bb": [525, 67, 775, 73, 774, 110, 524, 104],
+          "col": 15,
+          "labels": "CENTROAMÉRICA",
+          "r": "h1",
+          "row": 0
+        },
+        {
+          "bb": [101, 96, 174, 98, 173, 130, 100, 128],
+          "col": 0,
+          "labels": "Registro",
+          "r": "h3",
+          "row": 1
+        },
+        {
+          "bb": [177, 98, 254, 100, 253, 128, 176, 126],
+          "col": 3,
+          "labels": "Nacional",
+          "r": "h3",
+          "row": 1
+        },
+        {
+          "bb": [258, 101, 281, 102, 280, 128, 257, 127],
+          "col": 5,
+          "labels": "de",
+          "r": "h3",
+          "row": 1
+        },
+        {
+          "bb": [284, 101, 310, 102, 309, 130, 283, 129],
+          "col": 5,
+          "labels": "las",
+          "r": "h3",
+          "row": 1
+        },
+        {
+          "bb": [313, 104, 393, 106, 392, 132, 312, 131],
+          "col": 6,
+          "labels": "Personas",
+          "r": "h3",
+          "row": 1
+        },
+        {
+          "bb": [405, 107, 502, 109, 502, 135, 404, 133],
+          "col": 7,
+          "labels": "Documento",
+          "r": "h3",
+          "row": 1
+        },
+        {
+          "bb": [506, 109, 580, 111, 580, 137, 506, 135],
+          "col": 9,
+          "labels": "Personal",
+          "r": "h3",
+          "row": 1
+        },
+        {
+          "bb": [583, 110, 606, 111, 605, 137, 583, 137],
+          "col": 10,
+          "labels": "de",
+          "r": "h3",
+          "row": 1
+        },
+        {
+          "bb": [610, 110, 772, 113, 771, 142, 610, 138],
+          "col": 15,
+          "labels": "Identificación-DPI-",
+          "r": "h3",
+          "row": 1
+        },
+        {
+          "bb": [67, 146, 130, 148, 130, 165, 66, 164],
+          "col": 0,
+          "labels": "CÓDIGO",
+          "r": "h3",
+          "row": 2
+        },
+        {
+          "bb": [131, 148, 182, 150, 181, 168, 130, 166],
+          "col": 1,
+          "labels": "ÚNICO",
+          "r": "h3",
+          "row": 2
+        },
+        {
+          "bb": [183, 151, 207, 151, 207, 168, 182, 167],
+          "col": 3,
+          "labels": "DE",
+          "r": "h3",
+          "row": 2
+        },
+        {
+          "bb": [209, 151, 328, 154, 328, 172, 208, 169],
+          "col": 4,
+          "labels": "IDENTIFICACIÓN",
+          "r": "h3",
+          "row": 2
+        },
+        {
+          "bb": [170, 174, 201, 175, 201, 191, 169, 190],
+          "col": 3,
+          "labels": "CUI",
+          "r": "cu",
+          "row": 3
+        },
+        {
+          "bb": [383, 174, 451, 175, 450, 192, 383, 191],
+          "col": 7,
+          "labels": "NOMBRE",
+          "r": "no",
+          "row": 3
+        },
+        {
+          "bb": [384, 197, 486, 198, 486, 221, 384, 219],
+          "col": 7,
+          "labels": "BRAYAM",
+          "r": "",
+          "row": 4
+        },
+        {
+          "bb": [67, 196, 146, 199, 145, 229, 66, 227],
+          "col": 0,
+          "labels": "2705",
+          "r": "Fcui",
+          "row": 5
+        },
+        {
+          "bb": [151, 199, 249, 202, 248, 232, 150, 229],
+          "col": 3,
+          "labels": "42930",
+          "r": "Fcui",
+          "row": 5
+        },
+        {
+          "bb": [256, 202, 329, 204, 328, 234, 255, 232],
+          "col": 5,
+          "labels": "0101",
+          "r": "Fcui",
+          "row": 5
+        },
+        {
+          "bb": [384, 219, 470, 221, 469, 243, 383, 242],
+          "col": 7,
+          "labels": "ELISEO",
+          "r": "",
+          "row": 5
+        },
+        {
+          "bb": [381, 254, 456, 256, 456, 272, 381, 271],
+          "col": 7,
+          "labels": "APELLIDO",
+          "r": "ap",
+          "row": 6
+        },
+        {
+          "bb": [383, 277, 440, 278, 439, 299, 382, 298],
+          "col": 7,
+          "labels": "INAY",
+          "r": "",
+          "row": 7
+        },
+        {
+          "bb": [382, 297, 521, 299, 520, 324, 382, 321],
+          "col": 7,
+          "labels": "RODRÍGUEZ",
+          "r": "",
+          "row": 8
+        },
+        {
+          "bb": [379, 357, 492, 359, 492, 375, 379, 373],
+          "col": 7,
+          "labels": "NACIONALIDAD",
+          "r": "na",
+          "row": 9
+        },
+        {
+          "bb": [589, 361, 623, 362, 623, 377, 588, 376],
+          "col": 10,
+          "labels": "PAIS",
+          "r": "pn",
+          "row": 9
+        },
+        {
+          "bb": [625, 361, 648, 362, 647, 377, 624, 377],
+          "col": 12,
+          "labels": "DE",
+          "r": "",
+          "row": 9
+        },
+        {
+          "bb": [649, 362, 686, 363, 686, 378, 648, 377],
+          "col": 13,
+          "labels": "NAC.",
+          "r": "",
+          "row": 9
+        },
+        {
+          "bb": [380, 380, 433, 380, 433, 401, 380, 401],
+          "col": 7,
+          "labels": "GTM",
+          "r": "pais",
+          "row": 10
+        },
+        {
+          "bb": [589, 383, 641, 384, 641, 405, 588, 404],
+          "col": 11,
+          "labels": "GTM",
+          "r": "pais",
+          "row": 10
+        },
+        {
+          "bb": [378, 415, 423, 415, 423, 430, 378, 430],
+          "col": 7,
+          "labels": "SEXO",
+          "r": "se",
+          "row": 11
+        },
+        {
+          "bb": [378, 436, 519, 438, 519, 461, 378, 459],
+          "col": 7,
+          "labels": "MASCULINO",
+          "r": "Fse",
+          "row": 12
+        },
+        {
+          "bb": [377, 471, 429, 472, 428, 489, 376, 488],
+          "col": 7,
+          "labels": "FECHA",
+          "r": "fn",
+          "row": 13
+        },
+        {
+          "bb": [430, 472, 453, 472, 452, 488, 430, 488],
+          "col": 7,
+          "labels": "DE",
+          "r": "fn",
+          "row": 13
+        },
+        {
+          "bb": [453, 473, 549, 474, 549, 490, 453, 489],
+          "col": 8,
+          "labels": "NACIMIENTO:",
+          "r": "fn",
+          "row": 13
+        },
+        {
+          "bb": [376, 493, 506, 496, 506, 519, 375, 516],
+          "col": 7,
+          "labels": "01MAY1995",
+          "r": "Fdate",
+          "row": 14
+        },
+        {
+          "bb": [113, 541, 217, 542, 217, 568, 112, 567],
+          "col": 2,
+          "labels": "010595",
+          "r": "Fcui",
+          "row": 15
+        },
+        {
+          "bb": [823, 608, 930, 610, 929, 629, 822, 627],
+          "col": 14,
+          "labels": "30MAR2016",
+          "r": "Fdate",
+          "row": 16
+        },
+        {
+          "bb": [148, 637, 183, 638, 183, 656, 148, 656],
+          "col": 2,
+          "labels": "002",
+          "r": "Fdup",
+          "row": 17
+        },
+        {
+          "bb": [383, 642, 431, 642, 431, 657, 383, 657],
+          "col": 7,
+          "labels": "FIRMA",
+          "r": "fi",
+          "row": 17
+        }
+      ],
+      "mrz": {
+        "bowpi": {
+          "birthDate": "01/05/1995",
+          "country": {
+            "itemId": "GTM",
+            "value": "Guatemala"
+          },
+          "docType": "ID",
+          "documentNumber": "270542930",
+          "dueDate": "29/03/2026",
+          "fieldA": "S",
+          "gender": {
+            "itemId": "M",
+            "value": "MASCULINO"
+          },
+          "lastName": "INAY",
+          "mrzCounty": {
+            "itemId": "Guatemala",
+            "value": "01"
+          },
+          "mrzState": {
+            "itemId": "Guatemala",
+            "value": "01"
+          },
+          "name": "BRAYAM",
+          "nationality": {
+            "itemId": "GTM",
+            "value": "Guatemala"
+          },
+          "personalDocumentId": "2705429300101",
+          "personalDocumentIdCounty": {
+            "itemId": "Guatemala",
+            "value": "01"
+          },
+          "personalDocumentIdState": {
+            "itemId": "Guatemala",
+            "value": "01"
+          },
+          "rawBirthDate": "950501",
+          "rawCountry": "GTM",
+          "rawDueDate": "260329",
+          "rawNationality": "GTM"
+        },
+        "icao": {
+          "birthDate": "950501",
+          "birthDateHash": "4",
+          "country": "GTM",
+          "docType": "ID",
+          "documentNumber": "270542930",
+          "documentNumberHash": "6",
+          "dueDate": "260329",
+          "dueDateHash": "8",
+          "fieldA": "S",
+          "finalHash": "2",
+          "gender": "M",
+          "mrzCounty": "01",
+          "mrzState": "01",
+          "nationality": "GTM",
+          "optionalData1": "0101S0101<<<195",
+          "optionalData2": "<<908624498",
+          "personalDocumentIdCounty": "01",
+          "personalDocumentIdState": "01"
+        },
+        "sdk": [
+          {
+            "confidence": 92,
+            "text": "IDGTM27054293060101S0101<<<195",
+            "warpedBox": [
+              105.2575, 458.8192, 953.197, 465.624, 952.9199, 501.3296, 104.977,
+              494.9666
+            ]
+          },
+          {
+            "confidence": 91,
+            "text": "9505014M2603298GTM<<9086244982",
+            "warpedBox": [
+              101.0989, 506.6826, 953.2691, 513.4634, 952.9705, 550.6589,
+              100.8013, 543.7554
+            ]
+          },
+          {
+            "confidence": 92,
+            "text": "INAY<<BRAYAM<<<<<<<<<<<<<<<<<<",
+            "warpedBox": [
+              102.2115, 557.788, 954.1906, 565.9329, 953.9847, 596.2383,
+              101.9736, 592.8898
+            ]
+          }
+        ],
+        "validation": {
+          "birthDate": true,
+          "documentNumber": true,
+          "dueDate": true,
+          "genderGender": true,
+          "generalVal": true,
+          "lenL1": true,
+          "lenL2": true,
+          "lenL3": true
+        }
+      }
+    }
+  },
+  "metadata": {
+    "id": "ATG_3106",
+    "timestamp": 1681690803655,
+    "origin": "mobile"
+  },
+  "uriBack": "s3://ds-bowpi-prd/ocr/dev1/inference/images/2023/04/16/2705429300101_1681669205_773375_b.jpg",
+  "uriFront": "s3://ds-bowpi-prd/ocr/dev1/inference/images/2023/04/16/2705429300101_1681669205_773375_f.jpg",
+  "version": "1.6.2"
+}

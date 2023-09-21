@@ -1,0 +1,17 @@
+<div class="auth-inner">
+  <form [formGroup]="form" (ngSubmit)="login()">
+    <h3>Iniciar Sesion</h3>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email" />
+    </div>
+    <div class="form-group">
+      <label>Contraseña</label>
+      <input type="password" class="form-control" id="password" placeholder="Contraseña" formControlName="password" />
+    </div>
+
+    <div id="button-submit" class="d-grid gap-2">
+      <button class="btn btn-primary" type="submit">Iniciar Sesión</button>
+    </div>
+  </form>
+</div>

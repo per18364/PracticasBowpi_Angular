@@ -1,0 +1,157 @@
+{
+  "id": "1655280235.49254",
+  "timestamp": 20220615020355,
+  "backImageSize": "(667, 429)",
+  "cui": "2256434481609",
+  "frontImageSize": "(595, 398)",
+  "inference": {
+    "metadata": {
+      "back_size": [667, 429],
+      "environment": "PRD",
+      "errors": [],
+      "front_size": [595, 398],
+      "predictTime": 1.149529218673706,
+      "version": "1.5.1"
+    },
+    "predictions": {
+      "back": {
+        "birth_place": "SAN EDR CARCHA ALTA VERAPAZ GUATEMALA",
+        "birth_record": "L:281 F:325 P:649",
+        "city": "SAN PEDRO CARCHA ALTA VERAPAZ",
+        "expiry_date": "09JUN2021",
+        "id_card": "",
+        "issued_place": "",
+        "martial_status": "SOLTERO",
+        "series": "00000621238"
+      },
+      "front": {
+        "birth_date": "31MAR1993",
+        "citizenship": "GUATEMALA",
+        "countryofbirth": "GUATEMALA",
+        "cui": "2256 43448 1609",
+        "doc_date": "10JUN2011",
+        "gender": "MASCULINO",
+        "lastname": "CAAL POP",
+        "name": "ERWIN"
+      },
+      "mrz": {
+        "birth_date": "31MAR1993",
+        "country": "GTM",
+        "cui": "22564344801609",
+        "departamento": "Alta Verapaz",
+        "doc_type": "ID",
+        "expiry_date": "09JUN2021",
+        "first_name": "ERWIN",
+        "last_name": "CAAL",
+        "municipio": "San Pedro Carchá",
+        "nationality": "GTM",
+        "sex": "M"
+      }
+    },
+    "raw": {
+      "back": {
+        "birth_place": "SAN EDR CARCHA ALTA VERAPAZ GUATEMALA",
+        "birth_record": "L:281 F:325 P:649",
+        "city": "SAN PEDRO CARCHA ALTA VERAPAZ",
+        "expiry_date": "09JUN2021",
+        "id_card": "",
+        "issued_place": "",
+        "martial_status": "SOLTERO",
+        "series": "00000621238"
+      },
+      "errors": [],
+      "front": {
+        "birth_date": "31MAR1993",
+        "citizenship": "GUATEMALA",
+        "countryofbirth": "",
+        "cui": "2256 43448 1609",
+        "doc_date": "10JUN2011",
+        "gender": "MASCULINO",
+        "lastname": "CAAL POP",
+        "lastnames": "",
+        "name": "ERWIN"
+      },
+      "front_kvp": {
+        "birth_date": "31MAR1993",
+        "citizenship": "GUATEMALA",
+        "countryofbirth": "GUATEMALA",
+        "cui": "2256434481609",
+        "doc_date": "10JUN2011",
+        "gender": ""
+      },
+      "mrz": {
+        "bowpi": {
+          "birth_date": "31MAR1993",
+          "country": "GTM",
+          "cui": "22564344801609",
+          "departamento": "Alta Verapaz",
+          "doc_type": "ID",
+          "expiry_date": "09JUN2021",
+          "first_name": "ERWIN",
+          "last_name": "CAAL",
+          "municipio": "San Pedro Carchá",
+          "nationality": "GTM",
+          "sex": "M"
+        },
+        "icao": {
+          "birth_date": "930331",
+          "birth_date_hash": "3",
+          "country": "GTM",
+          "cui": "22564344801609",
+          "departamento": "16",
+          "doc_number": "225643448",
+          "doc_number_hash": "0",
+          "doc_type": "ID",
+          "expiry_date": "210609",
+          "expiry_date_hash": "8",
+          "final_hash": "4",
+          "municipio": "09",
+          "nationality": "GTM",
+          "optional_data1": "1609S1609<<<164",
+          "optional_data2": "<<104312760",
+          "sex": "M"
+        },
+        "sdk": [
+          {
+            "confidence": 91,
+            "text": "IDGTM22564344801609S1609<<<164",
+            "warpedBox": [
+              85.42895, 282.4013, 591.4083, 294.299, 590.8482, 318.581,
+              84.85682, 307.2084
+            ]
+          },
+          {
+            "confidence": 91,
+            "text": "9303313M2106098GTM<<1043127604",
+            "warpedBox": [
+              82.20451, 309.6642, 590.5623, 324.5898, 589.7403, 350.0431,
+              81.48383, 331.9929
+            ]
+          },
+          {
+            "confidence": 92,
+            "text": "CAAL<<ERWIN<<<<<<<<<<<<<<<<<<<",
+            "warpedBox": [
+              81.32902, 338.8852, 590.6188, 356.856, 589.7991, 379.5663,
+              80.53667, 360.8358
+            ]
+          }
+        ],
+        "validation": {
+          "dateOfBirth": true,
+          "dateOfExpiry": true,
+          "documentNumber": true,
+          "generalVal": true,
+          "lenL1": true,
+          "lenL2": true,
+          "lenL3": true,
+          "munDep": true,
+          "sex": true
+        }
+      }
+    }
+  },
+  "uriBack": "s3://ds-bowpi-prd/ocr/dev1/inference/images/2022/06/15/2256434481609_1655258636_642085_b.jpg",
+  "uriFront": "s3://ds-bowpi-prd/ocr/dev1/inference/images/2022/06/15/2256434481609_1655258636_642085_f.jpg",
+  "version": "1.5.1"
+}

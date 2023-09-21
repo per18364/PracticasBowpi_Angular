@@ -1,1 +1,209 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #1c8ef9;
+  min-height: 100vh;
+  display: flex;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+span {
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+}
+
+body,
+html,
+#app,
+app-root,
+.auth-wrapper {
+  height: 100%;
+  width: 100%;
+}
+.right {
+  margin-left: auto;
+}
+
+#app {
+  text-align: center;
+}
+
+#button-submit {
+  margin-top: 20px;
+}
+
+.navbar-light {
+  background-color: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+}
+
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  padding-top: 56px;
+}
+
+.auth-inner {
+  width: 450px;
+  margin: auto;
+  background: #ffffff;
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  transition: all 0.3s;
+  /* max-height: calc(100vh - 56px);
+  overflow-y: auto; */
+}
+
+.start-inner {
+  width: 90%;
+  max-height: calc(100vh - 56px);
+  overflow-y: auto;
+}
+
+.auth-wrapper .form-control:focus {
+  border-color: #167bff;
+  box-shadow: none;
+}
+
+.auth-wrapper h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1;
+  padding-bottom: 20px;
+}
+
+.custom-control-label {
+  font-weight: 400;
+}
+
+.forgot-password,
+.forgot-password a {
+  text-align: right;
+  font-size: 13px;
+  padding-top: 10px;
+  color: #7f7d7d;
+  margin: 0;
+}
+
+.forgot-password a {
+  color: #167bff;
+}
+/******/
+.content-wrapper {
+  text-align: center;
+}
+
+.images-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Espacio entre las imágenes */
+}
+
+.image-wrapper {
+  display: flex;
+  flex-direction: column; /* Asegura que el label y la img se apilen verticalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  text-align: center; /* Centra el texto del label */
+}
+
+img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 5px;
+}
+
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Ajusta el 300px a la anchura mínima que desees para tus tablas */
+  gap: 16px; /* Ajusta el espacio entre las tablas */
+  margin-top: 20px;
+}
+
+table {
+  display: block;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.info-table .section:hover {
+  cursor: pointer;
+  background-color: #e0e0e0;
+}
+
+.info-table td,
+.info-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.info-table .section th {
+  background-color: #f2f2f2;
+  color: #333;
+  text-align: center;
+}
+
+.info-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-around; /* o space-between, depende de tu preferencia */
+  align-items: center;
+}
+
+.image-container img {
+  width: 100%; /* o el valor que prefieras */
+  max-width: 150px; /* o el valor que prefieras */
+  border-radius: 8px; /* si deseas bordes redondeados */
+}
+
+/************MEDIA QUERIES****************/
+@media (max-width: 1050px) {
+  .table-grid {
+    grid-template-columns: 1fr; /* Hace que las tablas ocupen el ancho completo en pantallas pequeñas */
+  }
+  .image-container {
+    flex-direction: column;
+  }
+  img {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 580px) {
+  table {
+    font-size: small;
+  }
+  img {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 500px) {
+  table {
+    font-size: x-small;
+  }
+}
