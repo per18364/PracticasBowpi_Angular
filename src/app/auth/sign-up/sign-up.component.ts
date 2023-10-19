@@ -21,7 +21,7 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.newUser.isLoggedIn()) {
-      this.router.navigate(['/start']);
+      this.router.navigate(['/']);
     }
     this.form = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],

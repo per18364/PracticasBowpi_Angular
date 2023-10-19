@@ -1,0 +1,20 @@
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+.error-row {
+  background-color: red !important;
+  color: white;
+}
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Centrar horizontalmente */
+  align-content: space-around; /* Centrar verticalmente */
+}
+
+.grid-item {
+  flex-basis: calc(
+    50% - 20px
+  ); /* 50% del ancho del contenedor menos los márgenes */
+}

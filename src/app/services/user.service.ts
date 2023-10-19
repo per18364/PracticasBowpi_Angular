@@ -7,6 +7,8 @@ import { environment } from '../../enviroments/enviroments';
   providedIn: 'root',
 })
 export class UserService {
+  public dpiData: any;
+
   isLoggedIn(): boolean {
     return !!localStorage.getItem('token');
   }
@@ -15,6 +17,11 @@ export class UserService {
   currentUser = this.userDataSource.asObservable();
 
   constructor(private http: HttpClient) {}
+
+  getDpiData(id: string) {
+    // console.log(`${environment.dpiUrl}?_id=${id}`);
+    return this.http.get<any>(`${environment.dpiUrl}?_id=${id}`);
+  }
 
   getUserData() {
     const data = this.http.get('assets/jsons/json3.json');

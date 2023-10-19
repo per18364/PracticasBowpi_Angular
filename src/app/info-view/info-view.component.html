@@ -1,0 +1,396 @@
+<!-- <h4>HAS INICIADO SESION!!</h4> ya tengo webservice IMPLEMENTAR enviar ID de json y mostrar la data que reciba,
+                                    cambiar a que la vista sea estatica, reciba las fotos del json y sea su propio componente
+                                    a futuro**, vista con un solo boton donde se suban las imagenes y haya un boton que sea para procesar y lo envie a uno a la pagina de la info
+                                  nueva pestaña donde se muestren match y matchScore de inference.predictions y las validations de inference.metadata.validations en lo que recibo**,
+                                  color rojo a las filas de las tablas que esten vacias**-->
+<!-- <div class="upload-container">
+  <input type="file" (change)="onImageChange($event, 'front')" id="frontImageUpload" accept="image/*">
+  <label for="frontImageUpload">Subir Imagen Frontal</label>
+  <input type="file" (change)="onImageChange($event, 'back')" id="backImageUpload" accept="image/*">
+  <label for="backImageUpload">Subir Imagen Posterior</label>
+</div> -->
+<div class="auth-inner start-inner">
+  <div class="content-wrapper">
+    <div class="images-container" *ngIf="user">
+      <div class="image-wrapper">
+        <label>
+          <h3>Imagen Frontal</h3>
+        </label>
+        <div class="image-container">
+          <img [src]="imagen1" alt="Parte Frontal" (load)="onImageLoadFront($event)" #imageRef />
+          <!-- <img [src]="imagen1" alt="Parte Frontal" (load)="onImageLoad($event)" #imageRef /> -->
+          <div *ngFor="let square of user.inference.raw.front_kvp_df" class="color-box"
+            [style.left.px]="scaledValue(square.bb[0])" [style.top.px]="scaledValue(square.bb[1])"
+            [style.width.px]="scaledValue(square.bb[2] - square.bb[0])"
+            [style.height.px]="scaledValue(square.bb[5] - square.bb[1])" [hidden]="activeTab !== 'front' || !square">
+          </div>
+        </div>
+        <!-- <img src="assets/img/dpiFront1.png" alt="Parte Frontal" /> -->
+      </div>
+      <div class="image-wrapper">
+        <label>
+          <h3>Imagen Posterior</h3>
+        </label>
+        <div class="image-container">
+          <img [src]="imagen2" alt="Parte Posterior" (load)="onImageLoadBack($event)" #imageRef />
+          <!-- <img [src]="imagen2" alt="Parte Posterior" (load)="onImageLoad($event)" #imageRef /> -->
+          <div *ngFor="let square of user.inference.raw.back_kvp_df" class="color-box"
+            [style.left.px]="scaledValue(square.bb[0])" [style.top.px]="scaledValue(square.bb[1])"
+            [style.width.px]="scaledValue(square.bb[2] - square.bb[0])"
+            [style.height.px]="scaledValue(square.bb[5] - square.bb[1])" [hidden]="activeTab !== 'back' || !square">
+          </div>
+        </div>
+        <!-- <img src="assets/img/dpiBack1.png" alt="Parte Posterior" /> -->
+      </div>
+    </div>
+    <div *ngIf="user" class="tab-container">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="activeTab === 'front'" (click)="activeTab = 'front'">Información
+            Frontal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="activeTab === 'back'" (click)="activeTab = 'back'">Información
+            Posterior</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="activeTab === 'mrzBowpi'" (click)="activeTab = 'mrzBowpi'">MRZ Bowpi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="activeTab === 'mrzSDK'" (click)="activeTab = 'mrzSDK'">MRZ SDK</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="activeTab === 'kvpFront'" (click)="activeTab = 'kvpFront'">Kvp
+            Frontal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="activeTab === 'kvpBack'" (click)="activeTab = 'kvpBack'">Kvp
+            Posterior</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="activeTab === 'predictions'"
+            (click)="activeTab = 'predictions'">Predicciones</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane" [class.active]="activeTab === 'front'">
+          <table class="info-table">
+            <tbody>
+              <tr>
+                <td>Nombre:</td>
+                <td>{{ user.inference.predictions.front.name }}</td>
+              </tr>
+              <tr>
+                <td>Apellido:</td>
+                <td>{{ user.inference.predictions.front.lastname || user.inference.predictions.front.lastName }}</td>
+              </tr>
+              <tr>
+                <td>Fecha de Nacimiento:</td>
+                <td>{{ user.inference.predictions.front.birth_date || user.inference.predictions.front.birthDate }}</td>
+              </tr>
+              <tr>
+                <td>Nacionalidad:</td>
+                <td>{{ user.inference.predictions.front.citizenship }}</td>
+              </tr>
+              <tr>
+                <td>CUI:</td>
+                <td>{{ user.inference.predictions.front.cui || user.inference.predictions.front.personalDocumentId }}
+                </td>
+              </tr>
+              <tr>
+                <td>Fecha de Emision:</td>
+                <td>{{ user.inference.predictions.front.doc_date ||
+                  user.inference.predictions.front.personalDocumentDate }}
+                </td>
+              </tr>
+              <tr>
+                <td>Genero:</td>
+                <td>{{ user.inference.predictions.front.gender }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane" [class.active]="activeTab === 'back'">
+          <table class="info-table">
+            <tbody>
+              <tr>
+                <td>Lugar de nacimiento:</td>
+                <td>{{ user.inference.predictions.back.birth_place || user.inference.predictions.back.birthPlace }}</td>
+              </tr>
+              <tr>
+                <td>Record de nacimiento:</td>
+                <td>{{ user.inference.predictions.back.birth_record || user.inference.predictions.back.birthRecord }}
+                </td>
+              </tr>
+              <tr>
+                <td>Ciudad:</td>
+                <td>{{ user.inference.predictions.back.city }}</td>
+              </tr>
+              <tr>
+                <td>Fecha de vencimiento:</td>
+                <td>{{user.inference.predictions.back.expiry_date || user.inference.predictions.back.dueDate}}</td>
+              </tr>
+              <tr>
+                <td>Estado Civil:</td>
+                <td>{{ user.inference.predictions.back.martial_status || user.inference.predictions.back.maritalStatus
+                  }}
+                </td>
+              </tr>
+              <tr>
+                <td>Series:</td>
+                <td>{{ user.inference.predictions.back.series }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane" [class.active]="activeTab === 'mrzBowpi'">
+          <table class="info-table">
+            <tbody>
+              <tr
+                [ngClass]="{'error-row': !user.inference.raw.mrz.bowpi.birthDate && !user.inference.raw.mrz.bowpi.birth_date}">
+                <td>Fecha de nacimiento:</td>
+                <td>{{ user.inference.raw.mrz.bowpi.birth_date || user.inference.raw.mrz.bowpi.birthDate || "--"}}</td>
+              </tr>
+              <tr [ngClass]="{'error-row': !user.inference.raw.mrz.bowpi.country}">
+                <td>Pais:</td>
+                <td>{{ isObject(user.inference.raw.mrz.bowpi.country) ?
+                  user.inference.raw.mrz.bowpi.country.value
+                  : user.inference.raw.mrz.bowpi.country || "--"}}</td>
+              </tr>
+              <tr
+                [ngClass]="{'error-row': !user.inference.raw.mrz.bowpi.doc_type && !user.inference.raw.mrz.bowpi.docType}">
+                <td>Doc_Type:</td>
+                <td>{{ user.inference.raw.mrz.bowpi.doc_type || user.inference.raw.mrz.bowpi.docType|| "--" }}</td>
+              </tr>
+              <tr
+                [ngClass]="{'error-row': !user.inference.raw.mrz.bowpi.expiry_date && !user.inference.raw.mrz.bowpi.dueDate}">
+                <td>Fecha de vencimiento:</td>
+                <td>{{user.inference.raw.mrz.bowpi.expiry_date || user.inference.raw.mrz.bowpi.dueDate || "--"}}</td>
+              </tr>
+              <tr
+                [ngClass]="{'error-row': !user.inference.raw.mrz.bowpi.sex && !user.inference.raw.mrz.bowpi.gender.value}">
+                <td>Genero:</td>
+                <td>{{ user.inference.raw.mrz.bowpi.sex || user.inference.raw.mrz.bowpi.gender.value || "--" }}</td>
+              </tr>
+              <tr [ngClass]="{'error-row': !user.inference.raw.mrz.bowpi.personalDocumentIdCounty}">
+                <td>Municipio:</td>
+                <td>{{
+                  user.inference.raw.mrz.bowpi.personalDocumentIdCounty ?
+                  user.inference.raw.mrz.bowpi.personalDocumentIdCounty.itemId : "--"}}</td>
+              </tr>
+              <tr
+                [ngClass]="{'error-row': !user.inference.raw.mrz.bowpi.first_name && !user.inference.raw.mrz.bowpi.name}">
+                <td>Nombre:</td>
+                <td>{{ user.inference.raw.mrz.bowpi.first_name || user.inference.raw.mrz.bowpi.name|| "--" }}</td>
+              </tr>
+              <tr
+                [ngClass]="{'error-row': !user.inference.raw.mrz.bowpi.last_name && !user.inference.raw.mrz.bowpi.lastName}">
+                <td>Apellido:</td>
+                <td>{{ user.inference.raw.mrz.bowpi.last_name || user.inference.raw.mrz.bowpi.lastName|| "--" }}</td>
+              </tr>
+              <tr
+                [ngClass]="{'error-row': !user.inference.raw.mrz.bowpi.cui && !user.inference.raw.mrz.bowpi.documentNumber}">
+                <td>CUI:</td>
+                <td>{{ user.inference.raw.mrz.bowpi.cui || user.inference.raw.mrz.bowpi.documentNumber|| "--" }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane" [class.active]="activeTab === 'mrzSDK'">
+          <table *ngIf="user.inference.raw.mrz.sdk.length > 0; else noData" class="info-table">
+            <tbody>
+              <tr>
+                <td>Confianza1:</td>
+                <td>{{ user.inference.raw.mrz.sdk[0].confidence }}</td>
+                <td>{{ user.inference.raw.mrz.sdk[0].text }}</td>
+              </tr>
+              <tr>
+                <td>Confianza2:</td>
+                <td>{{ user.inference.raw.mrz.sdk[1].confidence }}</td>
+                <td>{{ user.inference.raw.mrz.sdk[1].text }}</td>
+              </tr>
+              <tr>
+                <td>Confianza3:</td>
+                <td>{{ user.inference.raw.mrz.sdk[2].confidence }}</td>
+                <td>{{ user.inference.raw.mrz.sdk[2].text }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <ng-template #noData>
+            <p class="error-message">No hay datos disponibles para mostrar.</p>
+          </ng-template>
+        </div>
+        <div class="tab-pane" [class.active]="activeTab === 'kvpFront'">
+          <table class="info-table">
+            <thead>
+              <tr>
+                <th>Labels</th>
+                <th>bb</th>
+                <th>Row</th>
+                <th>Col</th>
+                <th>R</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let element of user.inference.raw.front_kvp_df">
+                <td>{{element.labels}}</td>
+                <td>{{element.bb}}</td>
+                <td>{{ element.r }}</td>
+                <td>{{ element.col }}</td>
+                <td>{{ element.r }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane" [class.active]="activeTab === 'kvpBack'">
+          <table class="info-table">
+            <thead>
+              <tr>
+                <th>Labels</th>
+                <th>bb</th>
+                <th>Row</th>
+                <th>Col</th>
+                <th>R</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let element of user.inference.raw.back_kvp_df">
+                <td>{{element.labels}}</td>
+                <td>{{element.bb}}</td>
+                <td>{{ element.r }}</td>
+                <td>{{ element.col }}</td>
+                <td>{{ element.r }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane" [class.active]="activeTab === 'predictions'">
+          <div class="grid-container">
+            <div class="grid-item">
+              <table class="info-table">
+                <thead>
+                  <tr>
+                    <th colspan="2">Match</th>
+                  </tr>
+                <tbody>
+                  <tr>
+                    <td>Fecha de Nacimiento</td>
+                    <td>{{ user.inference.predictions.match.birthDate }}</td>
+                  </tr>
+                  <tr>
+                    <td>Fecha de Vencimiento</td>
+                    <td>{{ user.inference.predictions.match.dueDate }}</td>
+                  </tr>
+                  <tr>
+                    <td>Genero</td>
+                    <td>{{ user.inference.predictions.match.gender }}</td>
+                  </tr>
+                  <tr>
+                    <td>Apellido</td>
+                    <td>{{ user.inference.predictions.match.lastName }}</td>
+                  </tr>
+                  <tr>
+                    <td>Nombre</td>
+                    <td>{{ user.inference.predictions.match.name }}</td>
+                  </tr>
+                  <tr>
+                    <td>CUI</td>
+                    <td>{{ user.inference.predictions.match.personalDocumentId }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="grid-item">
+              <table class="info-table">
+                <thead>
+                  <tr>
+                    <th colspan="2">MatchScore</th>
+                  </tr>
+                <tbody>
+                  <tr>
+                    <td>Fecha de Nacimiento</td>
+                    <td>{{ user.inference.predictions.matchScore.birthDate }}</td>
+                  </tr>
+                  <tr>
+                    <td>Fecha de Vencimiento</td>
+                    <td>{{ user.inference.predictions.matchScore.dueDate }}</td>
+                  </tr>
+                  <tr>
+                    <td>Genero</td>
+                    <td>{{ user.inference.predictions.matchScore.gender }}</td>
+                  </tr>
+                  <tr>
+                    <td>Apellido</td>
+                    <td>{{ user.inference.predictions.matchScore.lastName }}</td>
+                  </tr>
+                  <tr>
+                    <td>Nombre</td>
+                    <td>{{ user.inference.predictions.matchScore.name }}</td>
+                  </tr>
+                  <tr>
+                    <td>CUI</td>
+                    <td>{{ user.inference.predictions.matchScore.personalDocumentId }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="grid-item">
+              <table class="info-table">
+                <thead>
+                  <tr>
+                    <th colspan="2">Frontal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>En Rango</td>
+                    <td>{{ user.inference.metadata.validations.front.inRangee }}</td>
+                  </tr>
+                  <tr>
+                    <td>Parte Frontal</td>
+                    <td>{{ user.inference.metadata.validations.front.isFront }}</td>
+                  </tr>
+                  <tr>
+                    <td>Campos Mandatorios</td>
+                    <td>{{ user.inference.metadata.validations.front.mandatoryFields }}</td>
+                  </tr>
+                  <tr>
+                    <td>Tipo</td>
+                    <td>{{ user.inference.metadata.validations.front.type }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="grid-item">
+              <table class="info-table">
+                <thead>
+                  <tr>
+                    <th colspan="2">Posterior</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>En Rango</td>
+                    <td>{{ user.inference.metadata.validations.back.inRangee }}</td>
+                  </tr>
+                  <tr>
+                    <td>Parte Posterior</td>
+                    <td>{{ user.inference.metadata.validations.back.isBack }}</td>
+                  </tr>
+                  <tr>
+                    <td>Campos Mandatorios</td>
+                    <td>{{ user.inference.metadata.validations.back.mandatoryFields }}</td>
+                  </tr>
+                  <tr>
+                    <td>Tipo</td>
+                    <td>{{ user.inference.metadata.validations.back.type }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

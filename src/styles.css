@@ -111,6 +111,7 @@ app-root,
   align-items: center;
   justify-content: center;
   gap: 15px; /* Espacio entre las imágenes */
+  margin-bottom: 20px;
 }
 
 .image-wrapper {
@@ -136,14 +137,38 @@ img {
   margin-top: 20px;
 }
 
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  color: #7f7d7d !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: #167bff !important;
+}
 table {
   display: block;
+}
+
+.tab-contaier {
+  margin: 20px;
 }
 
 .info-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin: 20px auto;
+}
+
+.tab-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px; /* O el valor que prefieras */
 }
 
 .info-table .section:hover {
@@ -169,15 +194,51 @@ table {
 }
 
 .image-container {
-  display: flex;
-  justify-content: space-around; /* o space-between, depende de tu preferencia */
-  align-items: center;
+  position: relative;
+  display: inline-block;
 }
 
 .image-container img {
-  width: 100%; /* o el valor que prefieras */
-  max-width: 150px; /* o el valor que prefieras */
-  border-radius: 8px; /* si deseas bordes redondeados */
+  display: block; /* Elimina espacios indeseados */
+  width: 100%; /* Ajusta según necesidad */
+  max-width: 450px; /* Ajusta según necesidad */
+  height: auto;
+}
+
+.upload-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.upload-container input[type="file"] {
+  display: none;
+}
+
+.upload-container label {
+  padding: 10px 20px;
+  background-color: #167bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 500;
+  margin: 10px;
+}
+
+/* .image-container {
+  position: relative;
+  display: inline-block;
+} */
+
+.color-box {
+  position: absolute;
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+.color-box2 {
+  position: absolute;
+  width: 54px;
+  height: 9px;
 }
 
 /************MEDIA QUERIES****************/
@@ -194,12 +255,15 @@ table {
 }
 
 @media (max-width: 580px) {
+  .images-container {
+    flex-direction: column;
+  }
   table {
     font-size: small;
   }
-  img {
+  /* img {
     max-width: 150px;
-  }
+  } */
 }
 
 @media (max-width: 500px) {

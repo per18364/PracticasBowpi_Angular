@@ -10,6 +10,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { StartComponent } from './start/start.component';
+import { InfoViewComponent } from './info-view/info-view.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { StartComponent } from './start/start.component';
     LoginComponent,
     SignUpComponent,
     StartComponent,
+    InfoViewComponent,
   ],
   imports: [
     BrowserModule,
