@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { StartComponent } from './start/start.component';
 import { InfoViewComponent } from './info-view/info-view.component';
+import { ImagesComponent } from './images/images.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { InfoViewComponent } from './info-view/info-view.component';
     SignUpComponent,
     StartComponent,
     InfoViewComponent,
+    ImagesComponent,
   ],
   imports: [
     BrowserModule,

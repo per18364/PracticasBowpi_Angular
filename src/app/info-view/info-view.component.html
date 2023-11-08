@@ -34,11 +34,24 @@
         <div class="image-container">
           <img [src]="imagen2" alt="Parte Posterior" (load)="onImageLoadBack($event)" #imageRef />
           <!-- <img [src]="imagen2" alt="Parte Posterior" (load)="onImageLoad($event)" #imageRef /> -->
-          <div *ngFor="let square of user.inference.raw.back_kvp_df" class="color-box"
-            [style.left.px]="scaledValue(square.bb[0])" [style.top.px]="scaledValue(square.bb[1])"
-            [style.width.px]="scaledValue(square.bb[2] - square.bb[0])"
-            [style.height.px]="scaledValue(square.bb[5] - square.bb[1])" [hidden]="activeTab !== 'back' || !square">
+          <div [ngSwitch]="activeTab">
+            <div *ngSwitchCase="'back'">
+              <div *ngFor="let square of user.inference.raw.back_kvp_df" class="color-box"
+                [style.left.px]="scaledValue(square.bb[0])" [style.top.px]="scaledValue(square.bb[1])"
+                [style.width.px]="scaledValue(square.bb[2] - square.bb[0])"
+                [style.height.px]="scaledValue(square.bb[5] - square.bb[1])">
+              </div>
+            </div>
+            <div *ngSwitchCase="'mrzSDK'">
+              <div *ngFor="let line of user.inference.raw.sdk">
+                <div *ngFor="let square of line.warpedbox" class="color-box" [style.left.px]="scaledValue(square[0])"
+                  [style.top.px]="scaledValue(square[1])" [style.width.px]="scaledValue(square[2] - square[0])"
+                  [style.height.px]="scaledValue(square[5] - square[1])">
+                </div>
+              </div>
+            </div>
           </div>
+          {{activeTab}}
         </div>
         <!-- <img src="assets/img/dpiBack1.png" alt="Parte Posterior" /> -->
       </div>

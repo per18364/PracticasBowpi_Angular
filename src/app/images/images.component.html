@@ -1,0 +1,33 @@
+<!-- <p>images works!</p> -->
+<div class="upload-container">
+  <input type="file" (change)="onImageChange($event, 'front')" id="frontImageUpload" accept="image/*">
+  <label for="frontImageUpload">Subir Imagen Frontal</label>
+  <input type="file" (change)="onImageChange($event, 'back')" id="backImageUpload" accept="image/*">
+  <label for="backImageUpload">Subir Imagen Posterior</label>
+</div>
+
+<div class="auth-inner start-inner">
+  <div class="content-wrapper">
+    <div class="images-container">
+      <div class="image-wrapper">
+        <label>
+          <h3>Imagen Frontal</h3>
+        </label>
+        <div class="image-container">
+          <img [src]="imagen1" alt="Parte Frontal" #imageRef />
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <label>
+          <h3>Imagen Posterior</h3>
+        </label>
+        <div class="image-container">
+          <img [src]="imagen2" alt="Parte Posterior" #imageRef />
+        </div>
+      </div>
+    </div>
+    <div class="input-container">
+      <button (click)="sendImages()">Obtener Datos</button>
+    </div>
+  </div>
+</div>

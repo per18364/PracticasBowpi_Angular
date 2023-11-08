@@ -76,3 +76,9 @@
   width: 250px;
   height: 250px;
 }
+.icon-right {
+  margin-left: 60%;
+}
+.icon-right:hover {
+  cursor: pointer;
+}

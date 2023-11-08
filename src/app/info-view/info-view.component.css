@@ -3,8 +3,7 @@
   font-weight: bold;
 }
 .error-row {
-  background-color: red !important;
-  color: white;
+  color: red;
 }
 .grid-container {
   display: flex;

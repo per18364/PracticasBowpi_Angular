@@ -23,6 +23,10 @@ export class UserService {
     return this.http.get<any>(`${environment.dpiUrl}?_id=${id}`);
   }
 
+  getImagesData(data: any) {
+    return this.http.post<any>(`${environment.imagesUrl}`, data);
+  }
+
   getUserData() {
     const data = this.http.get('assets/jsons/json3.json');
     return data;
