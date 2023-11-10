@@ -1,6 +1,8 @@
-# Nombre del Proyecto
+# Practicas Bowpi Jorge Perez 2023
 
-Breve descripción del proyecto.
+## Descripción
+
+Este proyecto es una aplicación web que permite a los usuarios subir imágenes y enviarlas a un web service para que sean procesadas y se devuelva la información del procesamiento de estas. El proyecto está dividido en dos partes: el frontend y el backend. El frontend está desarrollado en Angular y el backend en Django. El frontend se encarga de mostrar la interfaz de usuario y enviar las imágenes al backend para que sean procesadas. El backend se encarga de recibir las imágenes, procesarlas con webservices y devolver la información del procesamiento.
 
 ## Comenzando
 
@@ -30,7 +32,7 @@ cd frontend
 Instala Angular CLI globalmente (si aún no lo has hecho):
 
 ```bash
-npm i
+npm i -g @angular/cli
 ```
 
 2. Instala las dependencias del proyecto:
