@@ -1,98 +1,98 @@
 # Practicas Bowpi Jorge Perez 2023
 
-## Descripción
+## Description
 
-Este proyecto es una aplicación web que permite a los usuarios subir imágenes y enviarlas a un web service para que sean procesadas y se devuelva la información del procesamiento de estas. El proyecto está dividido en dos partes: el frontend y el backend. El frontend está desarrollado en Angular y el backend en Django. El frontend se encarga de mostrar la interfaz de usuario y enviar las imágenes al backend para que sean procesadas. El backend se encarga de recibir las imágenes, procesarlas con webservices y devolver la información del procesamiento.
+This project is a web application that allows users to upload images and send them to a web service so that they are processed and the processing information is returned. The project is divided into two parts: the frontend and the backend. The frontend is developed in Angular and the backend in Django. The frontend is responsible for displaying the user interface and sending the images to the backend for processing. The backend is responsible for receiving the images, processing them with webservices and returning the processing information.
 
-## Comenzando
+## How to run the project
 
-Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
+These instructions will allow you to get a copy of the project up and running on your local machine for development and testing purposes.
 
-### Pre-requisitos
+### Requierements
 
-Qué cosas necesitas para instalar el software y cómo instalarlas:
+To run the project you need to have installed:
 
 - [Node.js y npm](https://nodejs.org/es/download/)
 - [Angular CLI](https://angular.io/cli)
 - [Python](https://www.python.org/downloads/)
 - [MongoDB](https://www.mongodb.com/try/download/community)
 
-### Instalación
+### Installation
 
-Sigue estos pasos para configurar tu entorno de desarrollo local.
+Follow these steps to set up your local development environment.
 
 #### Frontend
 
-1. Navega a la carpeta `frontend`:
+1. Move to `frontend`:
 
 ```bash
 cd frontend
 ```
 
-Instala Angular CLI globalmente (si aún no lo has hecho):
+Install Angular CLI globally (if you haven't already):
 
 ```bash
 npm i -g @angular/cli
 ```
 
-2. Instala las dependencias del proyecto:
+2. Install the project dependencies:
 
 ```bash
 npm i
 ```
 
-3. Inicia el servidor de desarrollo:
+3. Start the development server:
 
 ```bash
 ng serve
 ```
 
-4. Abre tu navegador en [http://localhost:4200](http://localhost:4200).
+4. Open your browser at [http://localhost:4200](http://localhost:4200).
 
 #### Backend
 
-1. Navega a la carpeta `backend`:
+1. Move to `backend`:
 
 ```bash
 cd backend
 ```
 
-2. Crear un entorno virtual:
+2. Create a virtual environment:
 
 ```bash
 python -m venv env
 ```
 
-3. Activa el entorno virtual:
+3. Activate the virtual environment:
 
-En Windows:
+On Windows:
 
 ```bash
 env\Scripts\activate
 ```
 
-En Linux o Mac:
+On Linux or Mac:
 
 ```bash
 source env/bin/activate
 ```
 
-4. Instala los requerimientos:
+4. Install the requirements:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-5. Nadvega a la carpeta `angBackend`:
+5. Move to `angBackend`:
 
 ```bash
 cd angBackend
 ```
 
-6. Inicia el servidor de backend:
+6. Start the backend server:
 
 ```bash
 python manage.py runserver
 ```
 
-7. Abre tu navegador en [http://localhost:8000](http://localhost:8000).
+7. Open your browser at [http://localhost:8000](http://localhost:8000).
