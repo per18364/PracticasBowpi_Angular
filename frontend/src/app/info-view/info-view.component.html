@@ -51,7 +51,6 @@
               </div>
             </div>
           </div>
-          {{activeTab}}
         </div>
         <!-- <img src="assets/img/dpiBack1.png" alt="Parte Posterior" /> -->
       </div>
@@ -89,36 +88,43 @@
         <div class="tab-pane" [class.active]="activeTab === 'front'">
           <table class="info-table">
             <tbody>
-              <tr>
+              <tr [ngClass]="{'error-row': !user.inference.predictions.front.name }">
                 <td>Nombre:</td>
-                <td>{{ user.inference.predictions.front.name }}</td>
+                <td>{{ user.inference.predictions.front.name || "--" }}</td>
               </tr>
-              <tr>
+              <tr
+                [ngClass]="{'error-row': !user.inference.predictions.front.lastname && !user.inference.predictions.front.lastName}">
                 <td>Apellido:</td>
-                <td>{{ user.inference.predictions.front.lastname || user.inference.predictions.front.lastName }}</td>
-              </tr>
-              <tr>
-                <td>Fecha de Nacimiento:</td>
-                <td>{{ user.inference.predictions.front.birth_date || user.inference.predictions.front.birthDate }}</td>
-              </tr>
-              <tr>
-                <td>Nacionalidad:</td>
-                <td>{{ user.inference.predictions.front.citizenship }}</td>
-              </tr>
-              <tr>
-                <td>CUI:</td>
-                <td>{{ user.inference.predictions.front.cui || user.inference.predictions.front.personalDocumentId }}
+                <td>{{ user.inference.predictions.front.lastname || user.inference.predictions.front.lastName || "--" }}
                 </td>
               </tr>
-              <tr>
+              <tr
+                [ngClass]="{'error-row': !user.inference.predictions.front.birth_date && !user.inference.predictions.front.birthDat}">
+                <td>Fecha de Nacimiento:</td>
+                <td>{{ user.inference.predictions.front.birth_date || user.inference.predictions.front.birthDate || "--"
+                  }}</td>
+              </tr>
+              <tr [ngClass]="{'error-row': !user.inference.predictions.front.citizenship}">
+                <td>Nacionalidad:</td>
+                <td>{{ user.inference.predictions.front.citizenship || "--"}}</td>
+              </tr>
+              <tr
+                [ngClass]="{'error-row': !user.inference.predictions.front.cui && !user.inference.predictions.front.personalDocumentId}">
+                <td>CUI:</td>
+                <td>{{ user.inference.predictions.front.cui || user.inference.predictions.front.personalDocumentId ||
+                  "--"}}
+                </td>
+              </tr>
+              <tr
+                [ngClass]="{'error-row': !user.inference.predictions.front.doc_date && !user.inference.predictions.front.personalDocumentDate}">
                 <td>Fecha de Emision:</td>
                 <td>{{ user.inference.predictions.front.doc_date ||
-                  user.inference.predictions.front.personalDocumentDate }}
+                  user.inference.predictions.front.personalDocumentDate || "--" }}
                 </td>
               </tr>
-              <tr>
+              <tr [ngClass]="{'error-row': !user.inference.predictions.front.gender}">
                 <td>Genero:</td>
-                <td>{{ user.inference.predictions.front.gender }}</td>
+                <td>{{ user.inference.predictions.front.gender || "--" }}</td>
               </tr>
             </tbody>
           </table>
@@ -126,32 +132,40 @@
         <div class="tab-pane" [class.active]="activeTab === 'back'">
           <table class="info-table">
             <tbody>
-              <tr>
+              <tr
+                [ngClass]="{'error-row': !user.inference.predictions.back.birth_place && !user.inference.predictions.back.birthPlace}">
                 <td>Lugar de nacimiento:</td>
-                <td>{{ user.inference.predictions.back.birth_place || user.inference.predictions.back.birthPlace }}</td>
+                <td>{{ user.inference.predictions.back.birth_place || user.inference.predictions.back.birthPlace || "--"
+                  }}</td>
               </tr>
-              <tr>
+              <tr
+                [ngClass]="{'error-row': !user.inference.predictions.back.birth_record && !user.inference.predictions.back.birthRecord}">
                 <td>Record de nacimiento:</td>
-                <td>{{ user.inference.predictions.back.birth_record || user.inference.predictions.back.birthRecord }}
+                <td>{{ user.inference.predictions.back.birth_record || user.inference.predictions.back.birthRecord ||
+                  "--" }}
                 </td>
               </tr>
-              <tr>
+              <tr [ngClass]="{'error-row': !user.inference.predictions.back.city}">
                 <td>Ciudad:</td>
-                <td>{{ user.inference.predictions.back.city }}</td>
+                <td>{{ user.inference.predictions.back.city || "--" }}</td>
               </tr>
-              <tr>
+              <tr
+                [ngClass]="{'error-row': !user.inference.predictions.back.expiry_date && !user.inference.predictions.back.dueDate}">
                 <td>Fecha de vencimiento:</td>
-                <td>{{user.inference.predictions.back.expiry_date || user.inference.predictions.back.dueDate}}</td>
+                <td>{{user.inference.predictions.back.expiry_date || user.inference.predictions.back.dueDate || "--"}}
+                </td>
               </tr>
-              <tr>
+              <tr
+                [ngClass]="{'error-row': !user.inference.predictions.back.martial_status && !user.inference.predictions.back.maritalStatus}">
                 <td>Estado Civil:</td>
                 <td>{{ user.inference.predictions.back.martial_status || user.inference.predictions.back.maritalStatus
+                  || "--"
                   }}
                 </td>
               </tr>
-              <tr>
+              <tr [ngClass]="{'error-row': !user.inference.predictions.back.series}">
                 <td>Series:</td>
-                <td>{{ user.inference.predictions.back.series }}</td>
+                <td>{{ user.inference.predictions.back.series || "--" }}</td>
               </tr>
             </tbody>
           </table>

@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
       (response: any) => {
         localStorage.setItem('token', response.token);
         console.log('Inicio de sesión exitoso!');
-        this.router.navigate(['/start']);
+        this.router.navigate(['']);
       },
       (error) => {
         console.log(
